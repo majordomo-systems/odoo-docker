@@ -1,4 +1,4 @@
-# Odoo 13 Install
+# Odoo 14 Install
 
 Install [docker](https://docs.docker.com/get-docker/) and [docker-compose](https://docs.docker.com/compose/install/) yourself, then run:
 
