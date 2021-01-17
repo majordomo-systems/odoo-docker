@@ -1,7 +1,7 @@
 version: '2'
 services:
   postgres:
-    image: postgres:9.5
+    image: postgres:12
     environment:
       - POSTGRES_PASSWORD=odoo
       - POSTGRES_USER=odoo
@@ -11,11 +11,11 @@ services:
       - ./postgresql:/var/lib/postgresql/data
 
   odoo:
-    image: odoo:13.0
+    image: odoo:14.0
     depends_on:
       - postgres
     ports:
-      - "10013:8069"
+      - "10014:8069"
     tty: true
     command: -- --dev=reload
     environment:

@@ -4,9 +4,9 @@ Install [docker](https://docs.docker.com/get-docker/) and [docker-compose](https
 
 ``` bash
 # 1st Odoo @ localhost:10013
-curl -s https://raw.githubusercontent.com/majordomo-systems/odoo-docker/13.0/run.sh | sudo bash -s odoo-docker-1 10013
+curl -s https://raw.githubusercontent.com/majordomo-systems/odoo-docker/14.0/run.sh | sudo bash -s odoo-docker-1 10014
 # 2nd Odoo @ localhost:11013
-curl -s https://raw.githubusercontent.com/majordomo-systems/odoo-docker/13.0/run.sh | sudo bash -s odoo-docker-2 11013
+curl -s https://raw.githubusercontent.com/majordomo-systems/odoo-docker/14.0/run.sh | sudo bash -s odoo-docker-2 11014
 ```
 
 Start container:
@@ -14,11 +14,11 @@ Start container:
 docker-compose up
 ```
 
-* Open `localhost:10013` to access Odoo 13.0. If you want to start the server with a different port, change **10013** 
+* Open `localhost:10014` to access Odoo 14.0. If you want to start the server with a different port, change **10014** 
 
 ```
 ports:
- - "10013:8069"
+ - "10014:8069"
 ```
 
 To run in detached mode, execute this command:
