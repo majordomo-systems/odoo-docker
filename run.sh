@@ -2,7 +2,7 @@
 DESTINATION=$1
 PORT=$2
 # clone Odoo directory
-git clone --depth=1 https://github.com/majordomo-systems/odoo-12-docker.git $DESTINATION
+git clone -b 12.0 https://github.com/majordomo-systems/odoo-docker.git $DESTINATION
 rm -rf $DESTINATION/.git
 # set permissions
 mkdir -p $DESTINATION/postgresql
@@ -13,21 +13,21 @@ sudo sysctl -p
 sed -i 's/10012/'$PORT'/g' $DESTINATION/docker-compose.yml
 # run Odoo
 docker-compose -f $DESTINATION/docker-compose.yml up -d
-cd odoo-12-docker*/addons
+cd odoo-docker*/addons
 git clone https://github.com/OCA/rest-framework.git
-docker exec --user root odoo-12-docker-1_odoo12_1 pip3 install wheel
+docker exec --user root odoo-docker-1_odoo12_1 pip3 install wheel
 # for GraphQL Module
-docker exec --user root odoo-12-docker-1_odoo12_1 pip3 install graphql-server
-docker exec --user root odoo-12-docker-1_odoo12_1 pip3 install graphql-server-core
-docker exec --user root odoo-12-docker-1_odoo12_1 pip3 install graphene
-docker exec --user root odoo-12-docker-1_odoo12_1 pip3 install -r /mnt/extra-addons/rest-framework/requirements.txt
+docker exec --user root odoo-docker-1_odoo12_1 pip3 install graphql-server
+docker exec --user root odoo-docker-1_odoo12_1 pip3 install graphql-server-core
+docker exec --user root odoo-docker-1_odoo12_1 pip3 install graphene
+docker exec --user root odoo-docker-1_odoo12_1 pip3 install -r /mnt/extra-addons/rest-framework/requirements.txt
 # for OpenAPI Module
-docker exec --user root odoo-12-docker-1_odoo12_1 pip3 install bravado-core
+docker exec --user root odoo-docker-1_odoo12_1 pip3 install bravado-core
 # set addon permissions and ownership
-docker exec --user root odoo-12-docker-1_odoo12_1 chown -R odoo:odoo /mnt/extra-addons
-docker exec --user root odoo-12-docker-1_odoo12_1 chmod -R 777 /mnt/extra-addons
+docker exec --user root odoo-docker-1_odoo12_1 chown -R odoo:odoo /mnt/extra-addons
+docker exec --user root odoo-docker-1_odoo12_1 chmod -R 777 /mnt/extra-addons
 # restart container
-cd /root/odoo-12*
+cd /root/odoo-docker
 docker stop $(docker ps -aq)
 docker-compose up -d
 
