@@ -3,9 +3,9 @@
 Install [docker](https://docs.docker.com/get-docker/) and [docker-compose](https://docs.docker.com/compose/install/) yourself, then run:
 
 ``` bash
-# 1st Odoo @ localhost:10013
+# 1st Odoo @ localhost:10014
 curl -s https://raw.githubusercontent.com/majordomo-systems/odoo-docker/14.0/run.sh | sudo bash -s odoo-docker-1 10014
-# 2nd Odoo @ localhost:11013
+# 2nd Odoo @ localhost:11014
 curl -s https://raw.githubusercontent.com/majordomo-systems/odoo-docker/14.0/run.sh | sudo bash -s odoo-docker-2 11014
 ```
 
