@@ -16,13 +16,6 @@ docker-compose -f $DESTINATION/docker-compose.yml up -d
 cd odoo-docker*/addons
 git clone https://github.com/OCA/rest-framework.git
 docker exec --user root odoo-docker-1_odoo13_1 pip3 install wheel
-# for REST Module
-docker exec --user root odoo-docker-1_odoo13_1 pip3 install cachetools
-# for GraphQL Module
-docker exec --user root odoo-docker-1_odoo13_1 pip3 install graphql-server
-docker exec --user root odoo-docker-1_odoo13_1 pip3 install graphql-server-core
-docker exec --user root odoo-docker-1_odoo13_1 pip3 install graphene
-docker exec --user root odoo-docker-1_odoo13_1 pip3 install -r /mnt/extra-addons/rest-framework/requirements.txt
 # for OpenAPI Module
 docker exec --user root odoo-docker-1_odoo13_1 pip3 install bravado-core
 # set addon permissions and ownership
